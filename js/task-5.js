@@ -10,7 +10,7 @@ const setBgColor = () => {
   }
 
   body.style.background = getRandomHexColor();
-  colorTextCont.textContent = getRandomHexColor();
+  colorTextCont.textContent = body.style.background;
 };
 
 changeColorBtn.addEventListener('click', setBgColor);
