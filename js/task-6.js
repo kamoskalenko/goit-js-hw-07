@@ -15,10 +15,9 @@ function onCreateBtnClick() {
 }
 
 function createBoxes(amount) {
-  const boxItems = document.createElement('div');
+  const fragment = document.createDocumentFragment();
 
   boxesContainer.innerHTML = '';
-  boxItems.innerHTML = '';
 
   let size = 30;
 
@@ -28,11 +27,12 @@ function createBoxes(amount) {
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
 
-    boxItems.append(box);
+    fragment.append(box);
+
     size += 10;
   }
 
-  boxesContainer.append(boxItems);
+  boxesContainer.append(fragment);
 }
 
 function getRandomHexColor() {
